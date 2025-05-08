@@ -1,0 +1,55 @@
+@timestamp,@message,@logStream,@log
+2025-05-08 04:11:31.234,"START RequestId: 62a313a4-2c6e-4528-bd08-4ce2347761fa Version: $LATEST
+",2025/05/08/[$LATEST]ec4c2dc4d6804d8f9b14f2110c94593b,058264369230:/aws/lambda/bm-qrec-authorizer
+2025-05-08 04:11:36.593,"START RequestId: 1ee2577f-5035-4ee3-b856-707393972406 Version: $LATEST
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:38.559,"START RequestId: 95cd5e4e-f0a0-46c2-8333-1d7f44389a9d Version: $LATEST
+",2025/05/08/[$LATEST]ec4c2dc4d6804d8f9b14f2110c94593b,058264369230:/aws/lambda/bm-qrec-authorizer
+2025-05-08 04:11:38.560,"2025-05-08T04:11:38.560Z	95cd5e4e-f0a0-46c2-8333-1d7f44389a9d	INFO	Path: /qrec/rbm/customerDirectDebitInitiation method: s#POST
+",2025/05/08/[$LATEST]ec4c2dc4d6804d8f9b14f2110c94593b,058264369230:/aws/lambda/bm-qrec-authorizer
+2025-05-08 04:11:38.671,"START RequestId: cdfc35e8-f44b-4185-8279-650bc111c5f4 Version: $LATEST
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:38.726,"START RequestId: de7fc031-f40d-422f-8419-1fd7c8e59354 Version: $LATEST
+",2025/05/08/[$LATEST]0d1b7f6d6d1540978b39ccd636caa03e,058264369230:/aws/lambda/bm-qrec-authorizer
+2025-05-08 04:11:39.126,"START RequestId: 22ddd8cd-49e6-443b-9082-d8ed5115f504 Version: $LATEST
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.127,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.i.lambda.QrRbmController.startCustomerDirectDebitInitiationTrx(83)[0;39m - Start customerDirectDebitInitiation PAIN008 {""CstmrDrctDbtInitn"":{""GrpHdr"":{""MsgId"":""2f7cdf1e-2f6e-4b0b-953a-003d08ec7fa6"",""CreDtTm"":""2025-05-07T23:11:37.337"",""NbOfTxs"":""1"",""CtrlSum"":""12000.00"",""InitgPty"":{""Nm"":""Angie Nayelly P. E.""},""InitnSrc"":{""Nm"":""ENTRECUENTAS"",""Prvdr"":""REDEBAN"",""Vrsn"":""Ver001.01""}},""PmtInf"":[{""PmtInfId"":""17430792550977050960264760015143778"",""PmtMtd"":""TRF"",""ReqdColltnDt"":""2025-05-07"",""Cdtr"":{""Nm"":""CAMILA ANDREA ACHACUE TROCHEZ"",""Id"":{""OrgId"":{""Othr"":[{""Id"":""971374268""}]}}},""CdtrAgt"":{""FinInstnId"":{""BICFI"":""0807""}},""DrctDbtTxInf"":[{""PmtId"":{""InstrId"":""null"",""EndToEndId"":""fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2""},""InstdAmt"":""12000.00"",""Dbtr"":{""Nm"":""Angie Nayelly P. E."",""Id"":{""OrgId"":{""Othr"":[{""Id"":""+573143920638""}]},""PrvtId"":{""Othr"":[{""Id"":""1124848000"",""SchmeNm"":{""Cd"":""CC""}}]}}},""DbtrAcct"":{""Ccy"":""COP"",""Id"":{""Othr"":{""Id"":""352021007649032001""}},""Tp"":{""Cd"":""SVGS""}},""DbtrAgt"":{""FinInstnId"":{""BICFI"":""0059""}},""DbtrAgtAcct"":{""Id"":{""Othr"":{""Id"":""00590500""}}},""PmtTpInf"":{""CtgyPurp"":{""Cd"":""P2M"",""Prtry"":""PAY""}},""RmtInf"":{""Strd"":[{""RfrdDocInf"":[{""LineDtls"":[{""Id"":[{""Nb"":""DataMap QR""}],""Desc"":""channel:APP;uniqueCodeMerchant:971374268;idTransaccion:000001;terminalLabel:000;securityField:R8T2o2hDx1Vj38rTY7OWT6oX""}]}]}]}}]}]}}
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.127,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.i.l.p.HelperRequestValidator.validateRequestDebitFields(61)[0;39m - Start method validateRequestDebitFields() ...
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.127,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.i.l.p.CustomerDebitValidator.buildDebitRequest(119)[0;39m - Ends building Debit transaction object ...
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.129,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.p.d.q.QrTransactionDynamoAdapter.savePersonTransaction(72)[0;39m - Start saving Person Transaction with keys: P#1#1124848000 - fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.533,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.p.d.q.QrTransactionDynamoAdapter.savePersonTransaction(99)[0;39m - Ends saving Person Transaction ...
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.533,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.b.s.SqsMessageSenderAdapter.sendMessage(28)[0;39m - Sending message to Broker {""documentNumber"":""P#1#1124848000"",""transactionId"":""fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2"",""type"":""PERSON_DEBIT"",""customerPaymentData"":{""msgId"":""2f7cdf1e-2f6e-4b0b-953a-003d08ec7fa6"",""endToEndId"":""fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2"",""creDtTm"":""2025-05-07T23:11:37.337"",""orgnlNbOfTxs"":""1"",""ctrlSum"":""12000.00"",""instdAmt"":""12000.00"",""initActorName"":""Angie Nayelly P. E."",""initnSrcNm"":""ENTRECUENTAS"",""initnSrcPrvdr"":""REDEBAN"",""ctgyPurpCd"":""P2M"",""ctgyPurpPrtry"":""PAY"",""reqdColltnDt"":""2025-05-07"",""actorName"":""Angie Nayelly P. E."",""pmtInfId"":""17430792550977050960264760015143778""}}
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.586,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.b.s.SqsMessageSenderAdapter.sendMessage(31)[0;39m - Message sent to Broker: bm-qrec-sqs-transaction ...
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:39.624,"START RequestId: 64d507e8-fd18-57eb-9a2f-677ecc20fbb2 Version: $LATEST
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:39.625,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.p.d.TransactionEntityDynamoAdapter.getTransactionData(35)[0;39m - Key P#1#1124848000, Sortkey fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:40.173,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.s.nsbt.NSBTParamsBuilder.buildNSBTParamsBody(52)[0;39m - Start to build the NSBT params from database data ...
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:40.173,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.s.nsbt.NSBTParamsBuilder.buildNSBTEvallsParamsBody(73)[0;39m - Start to build the NSBT Evalls params from database data
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:40.173,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.w.n.e.NSBTExecutor.executeRequest(73)[0;39m - Executing the NSBT request
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:40.234,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.l.q.h.c.LowLevelHttpClient.executeRequest(40)[0;39m - Calling service https://BANTOTALTRX:12000/prdt_trx/servlet/com.dlya.bantotal.ax9996c1?wsdl, time: 2025-05-07 23:11:40.234
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:41.372,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.l.q.h.c.LowLevelHttpClient.executeRequest(40)[0;39m - Calling service https://api.hubredeban.com/rbmproduccion/produccion/api/pain002/v1.1.0/CustomerPaymentStatusReport, time: 2025-05-07 23:11:41.372
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:42.857,"START RequestId: a66247ce-f8dd-4f89-a8b6-0f75ae7641d5 Version: $LATEST
+",2025/05/08/[$LATEST]0d1b7f6d6d1540978b39ccd636caa03e,058264369230:/aws/lambda/bm-qrec-authorizer
+2025-05-08 04:11:43.661,"START RequestId: ce72b691-3a15-44ec-9578-1ab57be4b1b0 Version: $LATEST
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:43.702,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.b.s.SqsMessageSenderAdapter.sendMessage(28)[0;39m - Sending message to Broker {""documentNumber"":""P#1#1124848000"",""transactionId"":""fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2"",""type"":""TRX_STATUS_REPORT"",""status"":""APPROVED"",""sourceFirstOriginalType"":""PERSON_DEBIT""}
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:43.744,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.b.s.SqsMessageSenderAdapter.sendMessage(31)[0;39m - Message sent to Broker: bm-qrec-sqs-transaction ...
+",2025/05/08/[$LATEST]744261490f0b4943bd20198f0431e457,058264369230:/aws/lambda/bm-qrec-api-redeban
+2025-05-08 04:11:43.776,"START RequestId: 9e592a62-9a27-51a9-afe2-4af4ab1c6df0 Version: $LATEST
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction
+2025-05-08 04:11:43.777,"[1;30m[main][0;39m [34mINFO [0;39m [35mc.c.b.q.a.a.o.p.d.TransactionEntityDynamoAdapter.getTransactionData(35)[0;39m - Key P#1#1124848000, Sortkey fe1b2cf2-63c9-4b0d-a576-7fe4b8aea2b2
+",2025/05/08/[$LATEST]886bcc3b7ff4464bb2a57a8261f1e906,058264369230:/aws/lambda/bm-qrec-do-transaction

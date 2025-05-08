@@ -1,0 +1,20 @@
+2025-05-07T23:11:38.560-05:00	/qrec/rbm/customerDirectDebitInitiation method:
+2025-05-07T23:11:39.102-05:00	REPORT RequestId: 82f08634-90c4-4bec-9ef5-7a0f85bca281 Duration:
+2025-05-07T23:11:39.127-05:00	Start customerDirectDebitInitiation PAIN008
+2025-05-07T23:11:39.127-05:00	Start method validateRequestDebitFields
+2025-05-07T23:11:39.127-05:00	Ends building Debit transaction object
+2025-05-07T23:11:39.129-05:00	Start saving Person Transaction with keys:
+2025-05-07T23:11:39.533-05:00	Ends saving Person Transaction
+2025-05-07T23:11:39.533-05:00	Sending message to Broker
+2025-05-07T23:11:39.586-05:00	Message sent to Broker:
+2025-05-07T23:11:39.586-05:00	INIT_START Runtime Version: provided
+2025-05-07T23:11:39.624-05:00	START RequestId:
+2025-05-07T23:11:39.625-05:00	getTransactionData
+2025-05-07T23:11:39.625-05:00	Calculating parameter for key
+2025-05-07T23:11:40.173-05:00	Start to build the NSBT params
+2025-05-07T23:11:40.173-05:00	Start to build the NSBT Evalls params
+2025-05-07T23:11:40.173-05:00	Executing the NSBT request
+2025-05-07T23:11:40.234-05:00	Calling service https://BANTOTALTRX:12000
+2025-05-07T23:11:41.159-05:00	The runtime of the NSBT service is as follows 1317
+2025-05-07T23:11:41.372-05:00	Calling service https://api.hubredeban.
+2025-05-07T23:11:41.808-05:00	Error message Not Acceptable/The PAIN002 Http Response Code is as follows Accepted

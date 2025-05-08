@@ -1,99 +1,65 @@
 #!/usr/bin/env python3
-"""
-procesar_log.py
-Lee el primer archivo .txt que encuentre en el directorio donde se ejecuta
-y genera un .csv con dos columnas extra:
-  • ms_desde_inicio
-  • ms_desde_anterior
-"""
-
+import os
+import glob
 import csv
-import re
-from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime
 
-# ---------------------------------------------------------------------------
-# 1. Localizar el archivo .txt
-# ---------------------------------------------------------------------------
-txt_files = list(Path('.').glob('*.txt'))
-if not txt_files:
-    raise SystemExit('No se encontró ningún archivo .txt en la carpeta.')
+# ------------------------------------------------------------
+# 1. Localizar el .csv
+# ------------------------------------------------------------
+csv_files = glob.glob("*.csv")
+if not csv_files:
+    raise FileNotFoundError("No se encontró ningún archivo .csv en la carpeta.")
+if len(csv_files) > 1:
+    raise RuntimeError("Hay más de un archivo .csv en la carpeta, asegúrate de dejar solo uno.")
+in_file = csv_files[0]
+base_name, _ = os.path.splitext(in_file)
+out_file = f"{base_name}_timed.csv"
 
-txt_path = txt_files[0]
-csv_path = txt_path.with_suffix('.csv')
+# ------------------------------------------------------------
+# 2. Leer y procesar
+# ------------------------------------------------------------
+time_format = "%Y-%m-%d %H:%M:%S.%f"   # ej.: 2025-05-08 04:11:31.234
 
-# ---------------------------------------------------------------------------
-# 2. Expresión regular para extraer la marca de tiempo ISO-8601
-#    Ejemplo: 2025-05-08T07:14:42.271-05:00
-# ---------------------------------------------------------------------------
-TS_REGEX = re.compile(
-    r'(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}[-+]\d{2}:\d{2})'
-)
+with open(in_file, newline='', encoding="utf-8") as f_in, \
+     open(out_file, "w", newline='', encoding="utf-8") as f_out:
 
-# ---------------------------------------------------------------------------
-# 3. Leer, procesar y escribir CSV
-# ---------------------------------------------------------------------------
-rows = []
+    reader = csv.reader(f_in)
+    writer = csv.writer(f_out)
 
-with txt_path.open(encoding='utf-8') as fh:
-    for raw_line in fh:
-        line = raw_line.strip()
+    header = next(reader)                      # primera línea con los nombres de columna
+    timestamp_idx = 0                          # se asume que @timestamp es la primera columna
+    header.extend(["accum_ms", "delta_ms"])    # nuevas columnas
+    writer.writerow(header)
 
-        # Saltar líneas vacías
-        if not line:
+    base_time = prev_time = None
+
+    for row in reader:
+        if not row:                # línea vacía
             continue
+        ts_str = row[timestamp_idx].strip()
+        try:
+            current_time = datetime.strptime(ts_str, time_format)
+        except ValueError as e:
+            raise ValueError(f"No se pudo interpretar la marca de tiempo «{ts_str}»: {e}")
 
-        # Quitar corchetes inicial/final, si existen
-        line = line.lstrip('[').rstrip(']')
+        # Tiempo acumulado desde el primer evento
+        if base_time is None:
+            base_time = current_time
+            accum_ms = 0
+        else:
+            accum_ms = int((current_time - base_time).total_seconds() * 1000)
 
-        # Extraer timestamp
-        m = TS_REGEX.search(line)
-        if not m:
-            # Si la línea no contiene timestamp, omitirla o registrar error
-            continue
+        # Tiempo desde el evento anterior
+        if prev_time is None:
+            delta_ms = 0
+        else:
+            delta_ms = int((current_time - prev_time).total_seconds() * 1000)
 
-        ts_str = m.group(1)
-        msg = line[len(ts_str):].lstrip()  # resto de la línea sin el timestamp
+        prev_time = current_time
 
-        rows.append((ts_str, msg))
+        # Adjuntar los nuevos valores y escribir la fila
+        row.extend([accum_ms, delta_ms])
+        writer.writerow(row)
 
-# Si no hay filas, terminar
-if not rows:
-    raise SystemExit('No se encontraron timestamps en el archivo.')
-
-# ---------------------------------------------------------------------------
-# 4. Calcular diferencias de tiempo
-# ---------------------------------------------------------------------------
-# Convertir a datetime con zona horaria
-timestamps = [datetime.fromisoformat(ts) for ts, _ in rows]
-
-t0 = timestamps[0]
-
-ms_from_start = []
-ms_from_prev = []
-
-prev_time = t0
-for t in timestamps:
-    delta_start = (t - t0).total_seconds() * 1000
-    delta_prev  = (t - prev_time).total_seconds() * 1000
-    ms_from_start.append(int(delta_start))
-    ms_from_prev.append(int(delta_prev))
-    prev_time = t
-
-# ---------------------------------------------------------------------------
-# 5. Escribir el CSV
-# ---------------------------------------------------------------------------
-with csv_path.open('w', newline='', encoding='utf-8') as csvfile:
-    writer = csv.writer(csvfile)
-    # Cabecera
-    writer.writerow([
-        'timestamp',
-        'mensaje',
-        'ms_desde_inicio',
-        'ms_desde_anterior'
-    ])
-
-    for (ts_str, msg), ms_inicio, ms_prev in zip(rows, ms_from_start, ms_from_prev):
-        writer.writerow([ts_str, msg, ms_inicio, ms_prev])
-
-print(f'Archivo CSV generado: {csv_path.name}')
+print(f"Procesamiento completado. Archivo generado: {out_file}")
