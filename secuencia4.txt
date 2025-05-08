@@ -1,0 +1,26 @@
+2025-05-08T07:14:42.271-05:00       Calling service https://api.hubredeban.
+2025-05-08T07:14:42.682-05:00       resposeApi HttpCode 200
+2025-05-08T07:14:43.304-05:00       messageResponse:
+2025-05-08T07:14:44.533-05:00       INFO Path: /qrec/rbm/customerDirectDebitInitiation method:
+2025-05-08T07:14:44.533-05:00       /qrec/rbm/customerDirectDebitInitiation method:
+2025-05-08T07:14:45.076-05:00       REPORT RequestId: 82f08634-90c4-4bec-9ef5-7a0f85bca281 Duration:
+2025-05-08T07:14:45.356-05:00       Start customerDirectDebitInitiation PAIN008
+2025-05-08T07:14:45.424-05:00       Start method validateRequestDebitFields
+2025-05-08T07:14:45.424-05:00       Ends building Debit transaction object
+2025-05-08T07:14:45.434-05:00       Start saving Person Transaction with keys:
+2025-05-08T07:14:45.945-05:00       Ends saving Person Transaction 
+2025-05-08T07:14:45.947-05:00       Sending message to Broker
+2025-05-08T07:14:46.015-05:00       Message sent to Broker:
+2025-05-08T07:14:51.191-05:00       Start api TransactionReport
+2025-05-08T07:14:48.048-05:00       Calculating parameter for key
+2025-05-08T07:14:48.700-05:00       Start to build the NSBT params
+2025-05-08T07:14:48.700-05:00       Start to build the NSBT Evalls params
+2025-05-08T07:14:48.823-05:00       Executing the NSBT request
+2025-05-08T07:14:48.886-05:00       Calling service https://BANTOTALTRX:12000
+2025-05-08T07:14:50.141-05:00       The runtime of the NSBT service is as follows 1317
+2025-05-08T07:14:50.467-05:00       Calling service https://api.hubredeban.
+2025-05-08T07:14:50.727-05:00       Error message Not Acceptable
+2025-05-08T07:14:50.727-05:00       Sending message:
+2025-05-08T07:14:50.787-05:00       Message sent to broker
+2025-05-08T07:15:18.165-05:00       Calling service https://api.hubredeban.
+2025-05-08T07:15:29.166-05:00       Failed to connect to remote
